@@ -3,7 +3,10 @@ import java.awt.Graphics2D;
 import java.awt.Insets;
 import java.awt.geom.AffineTransform;
 import javax.swing.Timer;
-
+/**
+*Метод для параметров и запуск анимации
+* @param _shape локальная переменная
+*/
 public class TitlesPanel extends javax.swing.JPanel implements java.awt.event.ActionListener
 {
   private Graphics2D g2d;
@@ -27,7 +30,10 @@ public class TitlesPanel extends javax.swing.JPanel implements java.awt.event.Ac
       repaint();
     }
   }
-  
+  /**
+  *Анимациооное движение фигур
+  * @param g наследуемый параметр <em>paintComponent</em>
+  */
   private void doDrawing(Graphics g) {
     is_done = false;
     g2d = ((Graphics2D)g);
