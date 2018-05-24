@@ -1,13 +1,13 @@
 import java.awt.Point;
 import java.awt.geom.GeneralPath;
 
-public class ShapeFactory
+class ShapeFactory
 {
   public java.awt.Shape shape;
   public java.awt.BasicStroke stroke;
   public java.awt.Paint paint;
-  public int width = 25;
-  public int height = 25;
+  public final int width = 25;
+  public final int height = 25;
   /**
  * Метод выбора параметров и настройки:
  * shape
@@ -41,7 +41,7 @@ public class ShapeFactory
       break;
     case 9: 
       shape = new java.awt.geom.Arc2D.Double(-width / 2.0D, -height / 2.0D, width, height, 30.0D, 300.0D, 
-        2);
+        Arc2D.PIE);
       break;
     case 2: case 4: case 6: 
     case 8: default: 
