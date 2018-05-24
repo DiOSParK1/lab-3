@@ -8,7 +8,16 @@ public class ShapeFactory
   public java.awt.Paint paint;
   public int width = 25;
   public int height = 25;
-  
+  /**
+ * Метод выбора параметров и настройки:
+ * shape
+ * point
+ * width
+ * height
+ * stroke
+ * paint
+ * @param shape_type установка номера для выбора нужной формы
+ */
   public ShapeFactory(int shape_type) {
     stroke = new java.awt.BasicStroke(3.0F);
     switch (shape_type / 10) {
@@ -57,7 +66,14 @@ public class ShapeFactory
       throw new Error("type is nusupported");
     }
   }
-  
+  /**
+ * <p>Метод создания формы фигуры:</p>
+ * @param arms количество граней
+ * @param center координаты центра
+ * @param rOuter рассчёт положения точек
+ * @param rInner рассчёт положения точек
+ * @return создание фигуры
+ */
   private static java.awt.Shape createStar(int arms, Point center, double rOuter, double rInner)
   {
     double angle = 3.141592653589793D / arms;
