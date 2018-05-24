@@ -7,13 +7,11 @@ import javax.swing.Timer;
 *Метод для параметров и запуск анимации
 * @param _shape локальная переменная
 */
-public class TitlesPanel extends javax.swing.JPanel implements java.awt.event.ActionListener
+class TitlesPanel extends javax.swing.JPanel implements java.awt.event.ActionListener
 {
-  private Graphics2D g2d;
-  private Timer animation;
   private boolean is_done;
   private int start_angle = 0;
-  private int shape;
+  private final int shape;
   
   public TitlesPanel(int _shape) {
     is_done = true;
@@ -36,7 +34,7 @@ public class TitlesPanel extends javax.swing.JPanel implements java.awt.event.Ac
   */
   private void doDrawing(Graphics g) {
     is_done = false;
-    g2d = ((Graphics2D)g);
+    Graphics2D g2d = (Graphics2D) g;
     g2d.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, 
       java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
     
@@ -47,8 +45,8 @@ public class TitlesPanel extends javax.swing.JPanel implements java.awt.event.Ac
     int h = height - top - bottom;
     
     ShapeFactory shape = new ShapeFactory(this.shape);
-    g2d.setStroke(stroke);
-    g2d.setPaint(paint);
+    g2d.setStroke(shape.stroke);
+    g2d.setPaint(shape.paint);
     double angle = start_angle++;
     if (start_angle > 360) start_angle = 0;
     double dr = 90.0D / (w / (width * 1.5D));
