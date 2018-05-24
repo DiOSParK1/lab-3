@@ -1,10 +1,10 @@
-import javax.swing.JFrame;
+import javax.swing.*;
 /**
 *метод для выбора параметров TitlesFrame
 */
-public class TitlesFrame extends JFrame
+class TitlesFrame extends JFrame
 {
-  public TitlesFrame()
+  private TitlesFrame()
   {
     initUI();
   }
@@ -12,7 +12,7 @@ public class TitlesFrame extends JFrame
   private void initUI()
   {
     setTitle("Кривые фигуры");
-    setDefaultCloseOperation(3);
+    setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     add(new TitlesPanel(17));
     setSize(350, 350);
     setLocationRelativeTo(null);
